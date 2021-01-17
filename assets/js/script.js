@@ -21,7 +21,7 @@ function getContacts() {
     }
   };
 
-  httpRequest.open("POST", "http://api.contact.techup.me/contact/list");
+  httpRequest.open("POST", "https://api.contact.techup.me/contact/list");
   httpRequest.setRequestHeader("Content-Type", "application/json");
   httpRequest.send(JSON.stringify(contacts));
 }
