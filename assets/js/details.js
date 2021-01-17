@@ -12,7 +12,7 @@ let updateData = [];
 function contactDetails() {
   let httpRequest = new XMLHttpRequest();
   console.log(contact);
-  let userUrl = `http://api.contact.techup.me/contact/single?id=${contact}`;
+  let userUrl = `https://api.contact.techup.me/contact/single?id=${contact}`;
 
   httpRequest.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
@@ -50,7 +50,7 @@ function generateContactDetails() {
 
 function deleteContact() {
   let httpRequest = new XMLHttpRequest();
-  let delUrl = `http://api.contact.techup.me/contact/delete?id=${contact}`;
+  let delUrl = `https://api.contact.techup.me/contact/delete?id=${contact}`;
 
   httpRequest.onreadystatechange = function () {
     console.log("4");
@@ -82,7 +82,7 @@ function createContact() {
     }
   };
 
-  httpRequest.open("POST", "http://api.contact.techup.me/contact/create");
+  httpRequest.open("POST", "https://api.contact.techup.me/contact/create");
   httpRequest.setRequestHeader("Content-Type", "application/json");
   let newUser = {
     firstName: document.getElementById("firstName").value,
@@ -128,7 +128,7 @@ function updateContact() {
     }
   };
 
-  httpRequest.open("POST", "http://api.contact.techup.me/contact/update", true);
+  httpRequest.open("POST", "https://api.contact.techup.me/contact/update", true);
 
   httpRequest.setRequestHeader("Content-Type", "application/json");
 
