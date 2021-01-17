@@ -78,6 +78,7 @@ function createContact() {
     if (this.readyState === 4 && this.status === 200) {
       newUser = JSON.parse(this.response);
       console.log("New User", newUser);
+      goHome();
     }
   };
 
@@ -88,7 +89,7 @@ function createContact() {
     lastName: document.getElementById("lastName").value,
     mobilePhone: document.getElementById("mobilePhone").value,
     email: document.getElementById("email").value,
-    userId: "32sgEH9kVQ2T30UXYN09qA==",
+    userId: "9FsF7WheXAGgXAN42ta1GQ==",
   };
   httpRequest.send(JSON.stringify(newUser));
 }
@@ -123,6 +124,7 @@ function updateContact() {
     if (this.readyState === 4 && this.status === 200) {
       console.log(updateData);
       updateData = JSON.parse(this.response);
+      goHome();
     }
   };
 
@@ -136,7 +138,8 @@ function updateContact() {
     mobilePhone: document.getElementById("mobilePhone").value,
     email: document.getElementById("email").value,
     category: document.getElementById("category").value,
-    userId: "32sgEH9kVQ2T30UXYN09qA==",
+    userId: "9FsF7WheXAGgXAN42ta1GQ==",
+    contactId: `${contact}`,
   };
 
   httpRequest.send(JSON.stringify(updateData));
