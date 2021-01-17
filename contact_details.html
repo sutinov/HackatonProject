@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body onload="contactDetails();">
+    <div id="container">
+      <!-- <div class="card" style="width: 18rem">
+        <img class="card-img-top" src="..." alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div> -->
+    </div>
+    <!-- Button trigger modal -->
+
+    <!-- <button class="btn btn-light">Submit</button> -->
+
+    <div class="editbutton">
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+      >
+        Create/Edit Contact
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">
+                Create New or Edit Existing Contact
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="form">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder="John"
+                    name="firstName"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label"
+                    >Last Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder="Smith"
+                    name="lastName"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label"
+                    >Email</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    placeholder="johnsmith@mail.com"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label
+                    for="formGroupExampleInput2"
+                    class="form-label"
+                    required
+                    >Mobile Phone</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="mobilePhone"
+                    placeholder="555-555-5555"
+                    name="mobilePhone"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label"
+                    >Category</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="category"
+                    placeholder="Family"
+                    name="category"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label"
+                    >Favorite</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="favorite"
+                    placeholder="True or False"
+                    name="category"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label"
+                    >id</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="id"
+                    placeholder="Family"
+                    name="id"
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  onclick="updateContact()"
+                  class="btn btn-warning"
+                >
+                  Update Contact
+                </button>
+                <button
+                  type="button"
+                  onclick="deleteContact()"
+                  class="btn btn-danger"
+                >
+                  Delete Contact
+                </button>
+                <button
+                  type="button"
+                  onclick="createContact()"
+                  class="btn btn-success"
+                >
+                  Save as New Contact
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-info go-back-btn" onclick="goHome()">Go Back</button>
+
+    <!-- <button onclick="goHome()" class="btn btn-primary">Go Back</button> -->
+
+    <script src="assets/js/details.js"></script>
+  </body>
+</html>
